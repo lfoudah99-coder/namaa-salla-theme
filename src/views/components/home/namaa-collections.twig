@@ -1,0 +1,18 @@
+{# Collection cards. component.items[]: title, text, image, url. Colours cycle lavender, sky, peach, butter. #}
+{% set colors = ['--n-lav','--n-sky','--n-peach','--n-butter'] %}
+{% set fallback = ['images/namaa/box-letters.webp','images/namaa/box-words.webp','images/namaa/box-feel-girl.webp','images/namaa/stack-girl.webp'] %}
+<section component-id="{{ componentId }}" class="namaa-block">
+  <div class="container">
+    <div class="namaa-head"><h2>{% include 'pages.partials.namaa-symbol' %}{{ component.title|default('مجموعاتنا') }}</h2>{% if component.subtitle %}<span>{{ component.subtitle }}</span>{% endif %}</div>
+    <div class="namaa-colls">
+      {% for item in component.items %}
+        <a class="namaa-coll" style="--c:var({{ colors[loop.index0 % 4] }})" href="{{ item.url|default('#') }}">
+          <span class="namaa-coll__inner"><img src="{{ item.image ? item.image : fallback[loop.index0 % 4]|asset }}" alt="{{ item.title }}" loading="lazy"></span>
+          <h3>{{ item.title }}</h3>
+          {% if item.text %}<p>{{ item.text }}</p>{% endif %}
+          <span class="namaa-go">اكتشف المجموعة ←</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

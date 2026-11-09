@@ -1,0 +1,29 @@
+{#
+| NAMAA hero. Fields: eyebrow, title, text, primary_text, primary_url, secondary_text, secondary_url, image |
+#}
+{% set img = component.image ? component.image : 'images/namaa/stack-girl.webp'|asset %}
+<section component-id="{{ componentId }}" class="namaa-block namaa-hero">
+  <div class="container">
+    <div class="namaa-hero__card">
+      <div class="namaa-hero__copy">
+        <div class="namaa-eyebrow">{{ component.eyebrow|default('العب. اكتشف. انمُ.') }}</div>
+        <h1 class="namaa-hero__title">{{ component.title|default('التعلّم يبدأ من أبسط الأشياء: أول حرف، أول كلمة، أول شعور.') }}</h1>
+        <p class="namaa-hero__text">{{ component.text|default('بطاقات تعليمية عربية للأطفال الصغار، تحوّل وقتكم معهم إلى لعب وحديث واكتشاف، بعيدًا عن الشاشات.') }}</p>
+        <div class="namaa-btns">
+          <a class="namaa-btn namaa-btn--primary" href="{{ component.primary_url|default('#namaa-products') }}">{{ component.primary_text|default('تسوّق الآن') }}</a>
+          {% if component.secondary_text %}
+          <a class="namaa-btn namaa-btn--ghost" href="{{ component.secondary_url|default('#') }}">{{ component.secondary_text }}</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="namaa-hero__art">
+        <span class="namaa-deco" style="--c:var(--n-butter);top:18px;right:22px"><img src="{{ 'images/namaa/sun.png'|asset }}" alt=""></span>
+        <span class="namaa-deco namaa-hide-s" style="--c:var(--n-pink);bottom:22px;right:30px;width:64px;height:64px"><img src="{{ 'images/namaa/apple.png'|asset }}" alt=""></span>
+        <span class="namaa-deco" style="--c:var(--n-lav);bottom:18px;left:22px"><img src="{{ 'images/namaa/rabbit.png'|asset }}" alt=""></span>
+        <span class="namaa-tile" style="--c:var(--n-lav);--r:-8deg;top:22px;left:26px">أ</span>
+        <span class="namaa-tile namaa-hide-s" style="--c:var(--n-butter);--r:6deg;top:74px;left:64px">ب</span>
+        <img class="namaa-hero__img" src="{{ img }}" alt="{{ component.title|default('نماء') }}" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>

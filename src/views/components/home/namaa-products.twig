@@ -1,0 +1,27 @@
+{# Product cards with direct add to cart. component.products[] are Salla products. #}
+<section component-id="{{ componentId }}" id="namaa-products" class="namaa-block">
+  <div class="container">
+    <div class="namaa-head"><h2>{% include 'pages.partials.namaa-symbol' %}{{ component.title|default('منتجاتنا') }}</h2>{% if component.description %}<span>{{ component.description }}</span>{% endif %}</div>
+    <div class="namaa-products">
+      {% for product in component.products %}
+        <article class="namaa-card">
+          <a class="namaa-card__img" href="{{ product.url }}"><img src="{{ product.image.url }}" alt="{{ product.image.alt|default(product.name) }}" loading="lazy"></a>
+          <div class="namaa-card__body">
+            <h3><a href="{{ product.url }}">{{ product.name }}</a></h3>
+            {% if product.subtitle %}<p class="namaa-card__sub">{{ product.subtitle }}</p>{% endif %}
+            <div class="namaa-card__foot">
+              <span class="namaa-price">
+                {% if product.is_on_sale %}{{ product.sale_price|money }} <s>{{ product.regular_price|money }}</s>{% else %}{{ product.price|money }}{% endif %}
+              </span>
+              {% if product.has_options %}
+                <a class="namaa-btn namaa-btn--primary namaa-btn--sm" href="{{ product.url }}">اختر النسخة</a>
+              {% else %}
+                <salla-add-product-button class="namaa-add" product-id="{{ product.id }}" product-status="{{ product.status }}" product-type="{{ product.type }}" amount="{{ product.base_currency_price }}">أضف إلى السلة</salla-add-product-button>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

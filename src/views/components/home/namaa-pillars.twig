@@ -1,0 +1,17 @@
+{% set pics = ['sun','butterfly','tree','cloud'] %}
+{% set pales = ['--n-sky-pale','--n-butter-pale','--n-peach-pale','--n-sage-pale'] %}
+<section component-id="{{ componentId }}" class="namaa-block">
+  <div class="container">
+    <div class="namaa-head"><h2>{% include 'pages.partials.namaa-symbol' %}{{ component.title|default('التعلّم من خلال اللعب') }}</h2></div>
+    {% if component.intro %}<p class="namaa-lead">{{ component.intro }}</p>{% endif %}
+    <div class="namaa-pillars">
+      {% for item in component.items %}
+        <div class="namaa-pillar">
+          <span class="namaa-disc" style="--c:var({{ pales[loop.index0 % 4] }})"><img src="{{ ('images/namaa/' ~ pics[loop.index0 % 4] ~ '.png')|asset }}" alt=""></span>
+          <b>{{ item.title }}</b>{% if item.en %}<span class="namaa-en">{{ item.en }}</span>{% endif %}
+          <p>{{ item.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

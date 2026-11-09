@@ -1,0 +1,105 @@
+/* NAMAA brand layer for the Raed theme. Loaded after app.css. Plain CSS, no build step needed. */
+:root{
+  --n-cream:#F8F2E7;--n-paper:#FFFDF8;--n-sand:#E4D2B3;--n-sand-soft:#EFE4D0;--n-line:#E2D7C3;
+  --n-ink:#2E3420;--n-muted:#6E705F;--n-terra:#C2683F;--n-terra-deep:#A5532E;--n-olive:#5F6F3A;
+  --n-lav:#C3B8D7;--n-butter:#F1D891;--n-pink:#E3B3AE;--n-sage:#AFC1A2;--n-peach:#F1BC9C;--n-sky:#B8D4DA;
+  --n-sky-pale:#E2EEF0;--n-butter-pale:#FBF0CF;--n-peach-pale:#FBE6D8;--n-sage-pale:#E4ECDD;
+  --n-display:"El Messiri","Readex Pro",Tahoma,sans-serif;
+  --n-body:"Readex Pro",Tahoma,"Segoe UI",sans-serif;
+  --n-latin:"Lexend","Readex Pro",system-ui,sans-serif;
+  --font-main:"Readex Pro";
+  --color-primary:#C2683F;--color-primary-dark:#A5532E;--color-primary-light:#D9895F;--color-primary-reverse:#FFFDF8;
+  --s-radius:14px;
+}
+/* page */
+body.theme-raed{background:var(--n-cream)!important;color:var(--n-ink);font-family:var(--n-body)}
+body.theme-raed h1,body.theme-raed h2,body.theme-raed h3,.s-block__title h2,.s-product-card-content-title{font-family:var(--n-display);font-weight:600}
+.app-inner,.main-content{background:transparent}
+/* header and footer */
+.store-header,.main-nav-container,.top-navbar{background:var(--n-paper)!important;border-color:var(--n-line)!important}
+.store-footer,.store-footer__inner{background:var(--n-ink)!important;color:var(--n-cream)!important}
+.store-footer a{color:var(--n-cream)!important}
+/* Salla product cards across the store */
+.s-product-card-entry{background:var(--n-paper)!important;border:1px solid var(--n-line)!important;border-radius:18px!important;overflow:hidden;box-shadow:none!important}
+.s-product-card-image{background:var(--n-cream)!important}
+.s-product-card-price,.s-product-card-sale-price h4{color:var(--n-ink)!important;font-family:var(--n-latin)}
+/* buttons */
+.s-button-primary,.s-button-solid.s-button-primary{background:var(--n-terra)!important;color:var(--n-paper)!important;border-radius:10px!important}
+.s-button-primary:hover{background:var(--n-terra-deep)!important}
+
+/* ---------- NAMAA home sections ---------- */
+.namaa-block{padding-block:22px}
+.namaa-block .container{max-width:1180px}
+.namaa-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.namaa-head h2{display:flex;align-items:center;gap:10px;font-family:var(--n-display);font-weight:600;font-size:28px;line-height:1.3;margin:0;color:var(--n-ink)}
+.namaa-head span{color:var(--n-muted);font-size:14px}
+.namaa-sym{width:20px;height:24px;flex:none}
+.namaa-eyebrow{font-size:13px;color:var(--n-terra);font-weight:500}
+.namaa-lead{color:var(--n-muted);max-width:70ch;margin:0 0 16px}
+.namaa-btns{display:flex;gap:10px;flex-wrap:wrap}
+.namaa-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:11px 20px;border:1px solid transparent;font-weight:500;text-decoration:none;line-height:1.2}
+.namaa-btn--primary{background:var(--n-terra);color:var(--n-paper)}
+.namaa-btn--primary:hover{background:var(--n-terra-deep);color:var(--n-paper)}
+.namaa-btn--ghost{background:transparent;border-color:var(--n-ink);color:var(--n-ink)}
+.namaa-btn--sm{padding:8px 14px;font-size:14px}
+/* hero */
+.namaa-hero{padding-top:28px}
+.namaa-hero__card{display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;background:var(--n-paper);border:1px solid var(--n-line);border-radius:18px;overflow:hidden}
+.namaa-hero__copy{padding:32px 34px;min-width:0;align-self:center}
+.namaa-hero__title{font-family:var(--n-display);font-weight:600;font-size:clamp(28px,3.8vw,42px);line-height:1.4;margin:6px 0 10px;text-wrap:balance;color:var(--n-ink)}
+.namaa-hero__text{color:var(--n-muted);margin:0 0 18px;max-width:46ch}
+.namaa-hero__art{position:relative;background:var(--n-sand-soft);min-height:280px;display:grid;place-items:center;padding:28px}
+.namaa-hero__img{width:100%;max-width:440px;position:relative;z-index:1}
+.namaa-deco{position:absolute;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;pointer-events:none;background:var(--n-paper);border:3px solid var(--c);box-shadow:0 6px 16px rgba(46,52,32,.10);z-index:2}
+.namaa-deco img{width:66%;height:66%;object-fit:contain}
+.namaa-tile{position:absolute;width:44px;height:44px;border-radius:11px;border:2.5px solid var(--c);background:var(--n-cream);display:grid;place-items:center;font-family:var(--n-display);font-weight:600;font-size:24px;line-height:1;color:var(--n-ink);transform:rotate(var(--r,0deg));pointer-events:none;z-index:2}
+/* statement */
+.namaa-statement{background:var(--n-sand-soft);border-radius:22px;padding:34px 30px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center}
+.namaa-statement blockquote{margin:0;font-family:var(--n-display);font-weight:600;font-size:clamp(22px,3.2vw,36px);line-height:1.5;text-wrap:balance;color:var(--n-ink)}
+.namaa-seal{width:96px;height:96px;border-radius:50%;background:var(--n-paper);display:grid;place-items:center}
+.namaa-seal .namaa-sym{width:44px;height:52px}
+/* collections */
+.namaa-colls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.namaa-coll{border-radius:20px;padding:20px;background:var(--c);display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--n-ink);min-height:260px}
+.namaa-coll__inner{background:var(--n-cream);border-radius:16px;padding:14px;display:grid;place-items:center;aspect-ratio:16/10}
+.namaa-coll__inner img{max-height:100%;width:auto;max-width:100%;object-fit:contain}
+.namaa-coll h3{font-family:var(--n-display);font-weight:600;font-size:22px;margin:8px 0 0}
+.namaa-coll p{margin:0;font-size:14px}
+.namaa-go{font-size:14px;font-weight:500;margin-top:auto}
+/* products */
+.namaa-products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.namaa-card{background:var(--n-paper);border:1px solid var(--n-line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.namaa-card__img{display:block;background:var(--n-cream);aspect-ratio:1/1}
+.namaa-card__img img{width:100%;height:100%;object-fit:contain;padding:12px}
+.namaa-card__body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.namaa-card h3{font-family:var(--n-display);font-weight:600;font-size:19px;margin:0;line-height:1.4}
+.namaa-card h3 a{color:var(--n-ink);text-decoration:none}
+.namaa-card__sub{margin:0;color:var(--n-muted);font-size:13.5px}
+.namaa-card__foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding-top:8px}
+.namaa-price{font-family:var(--n-latin);font-weight:500;font-size:18px;color:var(--n-ink)}
+.namaa-price s{color:var(--n-muted);font-size:13px;margin-inline-start:4px}
+.namaa-add .s-button-btn,.namaa-add button{background:var(--n-terra)!important;color:var(--n-paper)!important;border-radius:10px!important;padding:8px 14px!important;font-size:14px!important}
+/* pillars */
+.namaa-pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.namaa-pillar{background:var(--n-paper);border:1px solid var(--n-line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.namaa-disc{width:84px;height:84px;border-radius:50%;background:var(--c);display:grid;place-items:center}
+.namaa-disc img{width:62%;height:62%;object-fit:contain}
+.namaa-pillar b{font-family:var(--n-display);font-weight:600;font-size:22px}
+.namaa-en{font-family:var(--n-latin);font-size:11px;letter-spacing:.2em;color:var(--n-muted)}
+.namaa-pillar p{margin:0;font-size:14.5px;color:var(--n-muted)}
+/* why */
+.namaa-why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.namaa-why div{border-top:3px solid var(--c);padding-top:12px}
+.namaa-why b{display:block;font-family:var(--n-display);font-weight:600;font-size:19px;margin-bottom:4px}
+.namaa-why p{margin:0;font-size:14px;color:var(--n-muted)}
+/* responsive */
+@media (max-width:1024px){.namaa-products{grid-template-columns:repeat(3,minmax(0,1fr))}.namaa-why{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:768px){
+  .namaa-hero__card{grid-template-columns:1fr}
+  .namaa-hero__copy{padding:24px 20px}
+  .namaa-colls,.namaa-pillars{grid-template-columns:1fr}
+  .namaa-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .namaa-statement{grid-template-columns:1fr;padding:26px 20px}
+  .namaa-hide-s{display:none}
+}
+@media (max-width:420px){.namaa-why{grid-template-columns:1fr}.namaa-card__foot{flex-direction:column;align-items:stretch}}

@@ -1,0 +1,11 @@
+{% set colors = ['--n-lav','--n-butter','--n-pink','--n-sky'] %}
+<section component-id="{{ componentId }}" class="namaa-block">
+  <div class="container">
+    <div class="namaa-head"><h2>{% include 'pages.partials.namaa-symbol' %}{{ component.title|default('لماذا يختار الآباء والأمهات نَماء؟') }}</h2></div>
+    <div class="namaa-why">
+      {% for item in component.items %}
+        <div style="--c:var({{ colors[loop.index0 % 4] }})"><b>{{ item.title }}</b><p>{{ item.text }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
